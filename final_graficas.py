@@ -98,6 +98,12 @@ def clasificar_recomendacion(valor):
     else:
         return "Alta"
 
-nivel = sistema.output['recomendacion']
-print("Nivel de recomendación:", round(nivel, 2))
-print("Clasificación:", clasificar_recomendacion(nivel))
+num = sistema.output['recomendacion']
+categoria = clasificar_recomendacion(num)
+
+print("Nivel de recomendacion:", round(num, 2))
+print("Clasificacion:", categoria)
+
+# string para Experta
+hecho_para_experta = f"(nivel-recomendacion {categoria})"
+print("Hecho para sistema experto:", hecho_para_experta)
